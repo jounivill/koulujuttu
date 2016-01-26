@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mover : MonoBehaviour 
+public class Mover : MonoBehaviour
 {
-	public float speed;
-	private Rigidbody2D rb;
+    public float speed;
+    private Rigidbody rb;
 
-	void Start () 
-	{
-		rb = GetComponent<Rigidbody2D>();
-		rb.velocity = transform.up * speed;
-	}
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.up * speed;
+
+        Destroy(gameObject, 2);
+    }
 }
 
