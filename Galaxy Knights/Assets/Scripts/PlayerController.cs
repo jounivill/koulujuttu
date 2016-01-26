@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey("space") && Time.time > nextFire)
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Shot1, ShotSpawn.position, ShotSpawn.rotation);
@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxis("Mouse X");
+        float moveVertical = Input.GetAxis("Mouse Y");
 
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
         rb.velocity = movement * speed;
