@@ -11,7 +11,9 @@ public class Mover : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;
 
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
+        Destroy(transform.parent.gameObject, 3);
+
     }
 }
 
